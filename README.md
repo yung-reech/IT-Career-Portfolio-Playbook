@@ -20,7 +20,7 @@ Labs are built primarily in **Cisco Packet Tracer** and **VMware**, with deliver
 ## 🧩 Projects
 
 ### Networking
-- [ ] Network topology design and configuration (Packet Tracer)
+- [x] [Lab 01: HQ campus network, VLANs, HSRP and failover (Packet Tracer)](networking/lab-01-topology/)
 - [ ] Troubleshooting and diagnostics lab
 - [ ] CCNA reinforcement exercises
 
