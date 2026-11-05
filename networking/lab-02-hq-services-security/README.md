@@ -15,14 +15,14 @@ and the failover tests. Security hardening and forensics follow in later section
 Hello 1 / hold 3 cut failover loss from 4 packets to 0-1. Packet Tracer does not
 keep these timers in the running configuration. As a result, they could not be
 saved in the startup configuration and had to be re-applied after every reload
-(see configs/hsrp-timers.txt). On real devices, the timers are accepted in the
+(see [configs/hsrp-timers.txt](configs/hsrp-timers.txt)). On real devices, the timers are accepted in the
 running configuration and can be saved in the startup configuration.
 
 ### Whole-switch failure test
 
 All CD01 links were shut down to simulate a switch failure and test the failover.
 CD02 took over routing for groups 10, 20, 30 and 100 and was Active for all seven
-groups (failover-cd01-down-cd02-standby-brief.png).
+groups ([failover-cd01-down-cd02-standby-brief.png](screenshots/failover-cd01-down-cd02-standby-brief.png)).
 
 All pings from Finance PC-1 (VLAN 10) were successful, with 0% loss:
 - the VLAN 10 gateway, 10.0.0.1 (TTL 255)
@@ -64,3 +64,25 @@ traffic (CD01 still Active for other groups with its VLAN 10 down) can explain t
 failed pings to other VLANs but not the failed ping to the virtual IP itself,
 which may be a Packet Tracer behaviour. The realistic failure test is the
 whole-switch failure in A3, and every ping passed in it.
+
+## Screenshots
+
+- [failover-cd01-down-cd02-standby-brief.png](screenshots/failover-cd01-down-cd02-standby-brief.png)
+- [failover-cd01-down-Finance-PC1-ping-to-simulated-Internet.png](screenshots/failover-cd01-down-Finance-PC1-ping-to-simulated-Internet.png)
+- [failover-cd01-down-Finance-PC1-ping-to-vlan10-gateway.png](screenshots/failover-cd01-down-Finance-PC1-ping-to-vlan10-gateway.png)
+- [failover-cd01-down-intervlan-Finance-PC1-ping-to-IT-PC1.png](screenshots/failover-cd01-down-intervlan-Finance-PC1-ping-to-IT-PC1.png)
+- [failover-cd01-restored-standby-brief.png](screenshots/failover-cd01-restored-standby-brief.png)
+- [Finance-PC1-dhcp.png](screenshots/Finance-PC1-dhcp.png)
+- [Finance-PC1-ping-dns-resolution.png](screenshots/Finance-PC1-ping-dns-resolution.png)
+- [Finance-PC1-ping-failover-fast-timers.png](screenshots/Finance-PC1-ping-failover-fast-timers.png)
+- [Finance-PC1--ping-router-link-10.0.0.241.png](screenshots/Finance-PC1--ping-router-link-10.0.0.241.png)
+- [Finance-PC1--ping-router-link-10.0.0.245.png](screenshots/Finance-PC1--ping-router-link-10.0.0.245.png)
+- [Guest-PC1-dhcp.png](screenshots/Guest-PC1-dhcp.png)
+- [HQ-Acc03-show-vlan-brief-server.png](screenshots/HQ-Acc03-show-vlan-brief-server.png)
+- [HQ-CD01-failover-test-fast-timers.png](screenshots/HQ-CD01-failover-test-fast-timers.png)
+- [HQ-CD01-failover-test-preempt-recovery.png](screenshots/HQ-CD01-failover-test-preempt-recovery.png)
+- [HQ-SRV-01-dhcp-pools.png](screenshots/HQ-SRV-01-dhcp-pools.png)
+- [HQ-SRV-01-dns-record.png](screenshots/HQ-SRV-01-dns-record.png)
+- [HQ-SRV-01-ip-settings.png](screenshots/HQ-SRV-01-ip-settings.png)
+- [HR-PC1-ping-dns-resolution.png](screenshots/HR-PC1-ping-dns-resolution.png)
+- [HSRP-post-restore-show-standby-brief.png](screenshots/HSRP-post-restore-show-standby-brief.png)
